@@ -167,21 +167,9 @@ const MeetingRoom = () => {
 
   // Screen share handling
   const handleScreenShare = async () => {
-    try {
-      let stream;
-
-      if (window.innerWidth <= 768) {
-        // For mobile: Display message or fallback since screen sharing may not be supported
-        if (!navigator.mediaDevices.getDisplayMedia) {
-          alert("Screen sharing is not supported on your mobile browser.");
-          return;
-        }
-      }
-
-      // For desktop: Start screen sharing
-      stream = await navigator.mediaDevices.getDisplayMedia({
-        video: true,
-      });
+    try {const stream = await navigator.mediaDevices.getDisplayMedia({
+  video: true,
+});
 
       console.log("Screen sharing started:", stream);
       // Use the stream for screen share functionality, e.g., passing to your video SDK
