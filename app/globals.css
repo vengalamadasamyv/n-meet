@@ -14,6 +14,21 @@
   position: relative;
 }
 
+
+/* Default behavior for larger screens */
+.str-video__speaker-layout--variant-right {
+  display: flex;
+  flex-direction: row;
+  /* other styling rules */
+}
+
+/* Mobile view adjustment */
+@media (max-width: 768px) {
+  .str-video__speaker-layout--variant-right {
+    flex-direction: column;  /* Stack elements vertically on mobile */
+  }
+}
+
 .str-video__speaker-layout__wrapper {
   max-height: 700px;
 }
